@@ -1,16 +1,29 @@
 # deb2aci
 
-Deb2aci works like aptitude, but instead it downloads the deb packages with all their dependencies
+Deb2aci works like aptitude, but instead of installing on host it downloads the deb packages with all their dependencies
 and installs them into the ACI image.
 
 It remembers each dependency in annotation to the resulting image manifest.
 
+## Building deb2aci
+
+Make sure your ``GOPATH`` is correctly configured, then run:
+
 ```
-# outputs nginx.aci
-deb2aci -pkg nginx -manifest nginx.manifest -image nginx.aci
+make get-deps
+make
 ```
 
-The image manifest will keep track of what packages are part of it:
+## Usage
+
+Let's build the example nginx ACI:
+
+```
+# outputs nginx.aci
+deb2aci -pkg nginx -manifest examples/nginx.manifest -image nginx.aci
+```
+
+The image manifest within generated ACI will keep track of what packages are part of it:
 
 ```
 [
@@ -25,4 +38,3 @@ The image manifest will keep track of what packages are part of it:
    ...
 ]
 ```
-
