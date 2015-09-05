@@ -12,8 +12,8 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/klizhentas/deb2aci/Godeps/_workspace/src/github.com/appc/spec/schema"
-	"github.com/klizhentas/deb2aci/Godeps/_workspace/src/github.com/appc/spec/schema/types"
+	"github.com/appc/spec/schema"
+	"github.com/appc/spec/schema/types"
 )
 
 type pkgs []string
